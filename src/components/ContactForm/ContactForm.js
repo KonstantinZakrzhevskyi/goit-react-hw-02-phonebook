@@ -6,7 +6,7 @@ class ContactForm extends Component {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
   };
-  
+
   state = {
     name: '',
     number: '',
@@ -25,8 +25,8 @@ class ContactForm extends Component {
   };
 
   reset = () => {
-    this.setState({name: '', number: ''})
-  }
+    this.setState({ name: '', number: '' });
+  };
 
   render() {
     const { name, number } = this.state;
@@ -35,7 +35,8 @@ class ContactForm extends Component {
       <form className={s.form} onSubmit={this.handleSubmit}>
         <label className={s.form__label}>
           Name
-          <input className={s.form__input}
+          <input
+            className={s.form__input}
             type="text"
             name="name"
             value={name}
@@ -44,10 +45,12 @@ class ContactForm extends Component {
             required
             onChange={this.handleInputChange}
           />
-        </label>.
+        </label>
+        .
         <label className={s.form__label}>
           Number
-          <input className={s.form__input}
+          <input
+            className={s.form__input}
             type="tel"
             name="number"
             value={number}
@@ -57,10 +60,12 @@ class ContactForm extends Component {
             onChange={this.handleInputChange}
           />
         </label>
-        <button className={s.form__btn} type="submit" disabled={!name}>Add contact</button>
+        <button className={s.form__btn} type="submit" disabled={!name}>
+          Add contact
+        </button>
       </form>
     );
-  };
-};
+  }
+}
 
 export default ContactForm;
